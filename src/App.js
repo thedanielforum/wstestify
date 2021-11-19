@@ -1,21 +1,24 @@
-import React from 'react'
-import Nav from './components/Nav'
-import Header from './components/Header'
-import Messages from './components/Messages'
-import Url from './components/Url'
-import Editor from './components/Editor'
-import Footer from './components/Footer'
-import moment from 'moment'
-import {NotificationContainer, NotificationManager} from 'react-notifications'
-import './app.css'
+import React from "react";
+import Nav from "./components/Nav";
+import Header from "./components/Header";
+import Messages from "./components/Messages";
+import Url from "./components/Url";
+import Editor from "./components/Editor";
+import Footer from "./components/Footer";
+import moment from "moment";
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
+import "./app.css";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      url: '',
+      url: "",
       open: false,
-      message: '',
+      message: "",
       messages: [],
     };
 
@@ -33,28 +36,30 @@ class App extends React.Component {
     // Listen to onchange event
     this.connection.onmessage = (msg) => {
       this.setState({
-        messages: this.state.messages.concat([{
-          sent: false,
-          timestamp: moment().format(this.timeFormat),
-          data: msg.data
-        }])
+        messages: this.state.messages.concat([
+          {
+            sent: false,
+            timestamp: moment().format(this.timeFormat),
+            data: msg.data,
+          },
+        ]),
       });
     };
     this.connection.onopen = () => {
       this.setState({ open: true });
-      NotificationManager.success('Socket connected');
+      NotificationManager.success("Socket connected");
     };
     this.connection.onclose = (err) => {
       this.setState({ open: false });
       console.log(err);
-      NotificationManager.error('Socket closed');
+      NotificationManager.error("Socket closed");
     };
   }
 
   onChange(e) {
     e.preventDefault();
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   }
 
@@ -63,11 +68,13 @@ class App extends React.Component {
     if (this.connection !== undefined) {
       this.connection.send(this.state.message);
       this.setState({
-        messages: this.state.messages.concat([{
-          sent: true,
-          timestamp: moment().format(this.timeFormat),
-          data: this.state.message
-        }])
+        messages: this.state.messages.concat([
+          {
+            sent: true,
+            timestamp: moment().format(this.timeFormat),
+            data: this.state.message,
+          },
+        ]),
       });
     }
   }
@@ -75,8 +82,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Nav/>
-        <Header/>
+        <Nav />
+        <Header />
         <section className="bg-light ws-container">
           <Url
             onConnect={this.onConnect}
@@ -94,15 +101,13 @@ class App extends React.Component {
                 />
               </div>
               <div className="col-lg-6">
-                <Messages
-                  messages={this.state.messages}
-                />
+                <Messages messages={this.state.messages} />
               </div>
             </div>
           </div>
         </section>
-        <Footer/>
-        <NotificationContainer/>
+        <Footer />
+        <NotificationContainer />
       </div>
     );
   }
