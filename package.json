@@ -1,24 +1,40 @@
 {
   "name": "wstestify",
+  "homepage": "https://thedanielforum.github.io/wstestify/",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "react-scripts": "4.0.3"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "moment": "^2.18.1",
-    "prop-types": "^15.5.10",
-    "react": "^15.5.4",
-    "react-addons-css-transition-group": "^15.5.2",
-    "react-dom": "^15.5.4",
-    "react-notifications": "^1.3.0",
-    "shortid": "^2.2.8"
+    "classnames": "^2.3.1",
+    "gh-pages": "^3.2.3",
+    "moment": "^2.29.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^17.0.2",
+    "react-notifications": "^1.7.2",
+    "shortid": "^2.2.16"
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

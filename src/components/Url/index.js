@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react";
+import PropTypes from "prop-types";
 
 class Url extends React.Component {
   render() {
@@ -30,14 +31,14 @@ class Url extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
 Url.propTypes = {
-  onConnect: React.PropTypes.func.isRequired,
-  onChange: React.PropTypes.func.isRequired,
-  url: React.PropTypes.string.isRequired,
+  onConnect: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  url: PropTypes.string.isRequired,
 };
 
-export default Url
+export default Url;
