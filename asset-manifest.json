@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/wstestify/static/css/main.69b39bcf.chunk.css",
-    "main.js": "/wstestify/static/js/main.73c6983b.chunk.js",
-    "main.js.map": "/wstestify/static/js/main.73c6983b.chunk.js.map",
+    "main.js": "/wstestify/static/js/main.fe3b0622.chunk.js",
+    "main.js.map": "/wstestify/static/js/main.fe3b0622.chunk.js.map",
     "runtime-main.js": "/wstestify/static/js/runtime-main.c2dbd8d8.js",
     "runtime-main.js.map": "/wstestify/static/js/runtime-main.c2dbd8d8.js.map",
     "static/css/2.fe1b694e.chunk.css": "/wstestify/static/css/2.fe1b694e.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.fe1b694e.chunk.css",
     "static/js/2.a8a6be33.chunk.js",
     "static/css/main.69b39bcf.chunk.css",
-    "static/js/main.73c6983b.chunk.js"
+    "static/js/main.fe3b0622.chunk.js"
   ]
 }
